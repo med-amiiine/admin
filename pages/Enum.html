@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body ng-app>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">JMA Exemple Bootstrap</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Profile utilisateur</a>
+                        </li>
+                        <li><a href="param.html"><i class="fa fa-gear fa-fw"></i> Paramètres</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Déconnexion</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Énumération</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Ajouter énumération
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+
+													<form name="enumForm" novalidate>
+													  <div class="form-group row">
+														<label class="col-sm-2">Code</label>
+														<div class="col-sm-8">
+															<input class="form-control" placeholder="Code" name="code" ng-model="code" ng-required="true">
+														</div>
+														<div class="col-sm-2">
+															<span class="help-block" ng-show="enumForm.code.$touched && enumForm.code.$error.required">Code obligatoire</span>
+														</div>
+													  </div>
+													  <div class="form-group row">
+														<label class="col-sm-2">Libellé</label>
+														<div class="col-sm-8">
+														  <input class="form-control" placeholder="Libellé" name="libelle" ng-model="Libelle" ng-required="true">
+														</div>
+														<div class="col-sm-2">
+															<span class="help-block" ng-show="enumForm.libelle.$touched && enumForm.libelle.$error.required">Libellé obligatoire</span>
+														</div>
+													  </div>
+													  <div class="form-group row">
+														<label class="col-sm-2">Description</label>
+														<div class="col-sm-8">
+														  <textarea class="form-control" placeholder="Description"></textarea>
+														</div>
+													  </div>
+													  <div class="form-group row">
+														<label class="col-sm-2">Ordre</label>
+														<div class="col-sm-8">
+														  <input class="form-control" type="number" placeholder="Ordre" name="ordre" ng-model="ordre" ng-required="true">
+														</div>
+														<div class="col-sm-2">
+															<span class="help-block" ng-show="enumForm.ordre.$touched && enumForm.ordre.$error.required">Ordre obligatoire</span>
+														</div>														
+													  </div>
+													  <div class="form-group row">
+														<label class="col-sm-2">Obsolète</label>
+														<div class="col-sm-8 checkbox">
+															<label>
+															   <input type="checkbox" value="">Oui
+															</label>
+														</div>
+													</div>	
+													<button type="button" class="btn btn-link col-sm-offset-8" ng-clic="resetForm">Annuler</button>												
+													<button type="submit" class="btn btn btn-success" ng-clic="submitEnumForm()">Valider</button>
+													</form>	
+													 <!-- /.form-->
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+	<!-- AngularJS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+    
+	<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+    </script>
+
+	<script>
+     //1. create app module 
+        var enumApp = angular.module('EnumApp', []);
+
+        //2. create controller
+        studentApp.controller("enumController", function ($scope, $http) {
+  
+            //3. attach originalStudent model object
+            $scope.originalEnum = {
+                code: '',
+                libelle: '',
+                description: '',
+                ordre: 0,
+                obsolete: false,
+
+            };
+
+            //4. copy originalStudent to student. student will be bind to a form 
+            $scope.enum = angular.copy($scope.originalEnum);
+
+            //5. create submitStudentForm() function. This will be called when user submits the form
+            $scope.submitEnumForm = function () {
+
+                // send $http request to save student
+
+            };
+
+            //6. create resetForm() function. This will be called on Reset button click.  
+            $scope.resetForm = function () {
+                $scope.enum = angular.copy($scope.OriginalEnum);
+            };
+    });
+    </script> 
+</body>
+
+</html>
